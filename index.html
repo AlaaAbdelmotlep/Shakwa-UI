@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+  <link href="./style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <form action="http://localhost:8080/report" enctype="multipart/form-data" method="post">
+    <label for="type_id">Choose a Report:</label>
+    <select name="type_id" id="type_id">
+      <option value="1">Cleaning</option>
+      <option value="2">Security</option>
+      <option value="3">OverCrowding</option>
+    </select><br /><br />
+
+    <label for="report_lat">report lat</label><br />
+    <input type="text" id="report_lat" value="" name="report_lat" /><br /><br />
+
+    <label for="report_long">report long</label><br />
+    <input type="text" id="report_long" value="" name="report_long" /><br /><br />
+
+    <label for="report_description">report-description</label><br /><br />
+    <input type="text" id="report_description" name="report_description" /><br /><br />
+
+    <input type="file" name="reportFile" multiple />
+
+    <input type="submit" value="Upload" />
+  </form>
+
+  <div id="map"></div>
+  <pre id="info"></pre>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
